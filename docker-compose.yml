@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  products_db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: products_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - products_db_data:/var/lib/postgresql/data
+
+  students_db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: students_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - students_db_data:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  products_db_data:
+  students_db_data:
+  mongo_data:
