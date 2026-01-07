@@ -29,6 +29,9 @@ async function bootstrap() {
     createProxyMiddleware({
       target: 'http://localhost:3003',
       changeOrigin: true,
+      pathRewrite: {
+        '^/products': '', // '/products' so'zi o'chib, servisga '/' bo'lib boradi
+      },
     }),
   );
 
