@@ -33,5 +33,6 @@ async function bootstrap() {
   );
 
   await app.listen(8000);
+  console.log('🚀 API Gateway is running on http://localhost:8000');
 }
 bootstrap();
